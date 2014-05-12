@@ -20,6 +20,12 @@ module JacintheReports
   # this year
   YEAR = Time.now.strftime('%Y').to_i
 
+  # name of this version
+  NAME = 'Jacinthe violette'
+
+  # version number
+  VERSION = '3.0.0.dev'
+
   # windows ?
   def self.win?
     RUBY_PLATFORM =~ /mswin|mingw/
@@ -34,11 +40,9 @@ module JacintheReports
   def self.darwin?
     RUBY_PLATFORM =~ /darwin/
   end
-
-  NAME = 'Jacinthe violette'
-  VERSION = '3.0.0.dev'
 end
 
+# alternative name of module
 J2R = JacintheReports
 
 require_relative 'jaccess/errors.rb'

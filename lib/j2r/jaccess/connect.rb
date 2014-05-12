@@ -45,7 +45,7 @@ module JacintheReports
 
     # returns the loaded database
     # @return [Sequel::Mysql2::Database] the loaded database
-    def self.base
+    def self.base # rubocop:disable TrivialAccessors
       @base
     end
 

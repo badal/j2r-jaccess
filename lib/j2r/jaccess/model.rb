@@ -31,7 +31,7 @@ module JacintheReports
       end
 
       # @return [Hash] name of table => model
-      def self.model_table
+      def self.model_table # rubocop:disable TrivialAccessors
         @models
       end
 

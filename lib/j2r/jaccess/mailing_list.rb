@@ -10,6 +10,7 @@ module JacintheReports
   module Jaccess
     # address methods for mailings
     class MailingList
+      # pattern for routing file
       ROUTER = [:vue_adresse_tiers, nil,
                 :vue_adresse_nom, nil,
                 :vue_adresse_ligne1, nil,
@@ -20,11 +21,11 @@ module JacintheReports
                 :vue_adresse_ville, nil,
                 :vue_adresse_province, nil,
                 :vue_adresse_pays]
-
+      # pattern for email routing file
       EMAIL = [:vue_adresse_tiers, nil,
                :vue_adresse_nom, nil,
                :vue_adresse_email]
-
+      # pattern for list of tiers w/o email
       LIST = [:vue_adresse_tiers, ' ', :vue_adresse_nom]
 
       # @param [Array] tiers_list of tiers_id
@@ -84,17 +85,14 @@ module JacintheReports
 
       # @return [Array<String>] content of csv file (EMAIL)
       def email_adresses
-        @mailing.map do |adrs|
-          adrs.routing(EMAIL)
-        end.reject { |item| item.last.empty? }
+        list = @mailing.map { |adrs| adrs.routing(EMAIL) }
+        list.reject { |item| item.last.empty? }
       end
 
+      # @return [Array<String>] content of csv file (tiers w/o addresses)
       def no_email_adresses
-        @mailing.select do |adrs|
-          adrs.routing(EMAIL).last.empty?
-        end.map do |adrs|
-          adrs.routing(ROUTER)
-        end
+        list = @mailing.select { |adrs| adrs.routing(EMAIL).last.empty? }
+        list.map { |adrs| adrs.routing(ROUTER) }
       end
 
       # @return [Array<String>] content of csv file (Tiers list)

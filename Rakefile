@@ -32,6 +32,11 @@ YARD::Rake::YardocTask.new do |t|
   t.options += %w(--files LICENSE)
 end
 
+desc 'show not documented'
+task :yard_not_documented do
+  system 'yard stats --list-undoc'
+end
+
 Rake::TestTask.new do |t|
   t.libs.push 'lib'
   t.test_files = FileList['test/*_test.rb']

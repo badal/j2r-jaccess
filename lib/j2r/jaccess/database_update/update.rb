@@ -13,6 +13,7 @@ require_relative 'build_extended_tables.rb'
 module JacintheReports
   # methods for building the association and field Jaccess tables
   module Update
+    # before processing
     WARNING = ['', 'AVERTISSEMENT', 'Cette opération est destructrice !',
                'Les nombres affichés après l\'exécution doivent ressembler à',
                '  Tables : 40',
