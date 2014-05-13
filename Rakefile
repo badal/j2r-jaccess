@@ -1,3 +1,6 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
 require 'rubygems/package_task'
 require 'yard'
 require 'yard/rake/yardoc_task'
@@ -8,7 +11,7 @@ require_relative 'lib/j2r/jaccess.rb'
 
 spec = Gem::Specification.new do |s|
   s.name = 'j2r-jaccess'
-  s.version = J2R::VERSION
+  s.version = J2R::Jaccess::VERSION
   s.has_rdoc = true
   s.extra_rdoc_files = %w(README.md LICENSE)
   s.summary = 'To be replaced'
@@ -23,13 +26,16 @@ end
 
 Gem::PackageTask.new(spec) do |p|
   p.gem_spec = spec
-  p.need_tar = true
+  p.need_tar = false
  # p.need_zip = true
 end
 
 YARD::Rake::YardocTask.new do |t|
-  t.options += ['--title', "j2r-jaccess #{J2R::VERSION} Documentation"]
+  t.options += ['--title', "JacintheReports #{J2R::Jaccess::VERSION} Documentation"]
   t.options += %w(--files LICENSE)
+  t.options += %w(--files HISTORY.md)
+  t.options += %w(--files TODO.md)
+  t.options += %w(--verbose)
 end
 
 desc 'show not documented'

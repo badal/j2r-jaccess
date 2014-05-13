@@ -1,5 +1,7 @@
-## extensions.rb needed for AFNOR pattern !!!
-* either move extension down
-* or move AFNOR up (outside patterns)
+# Things to fix
 
 ## mailing_list should not be here
+
+## where to put basic things ?
+* file methods
+* without_accents

@@ -14,17 +14,10 @@ require 'logger'
 
 # production de rapports pour Jacinthe
 module JacintheReports
-  # author
-  COPYRIGHT = "\u00A9 Michel Demazure 2011-2014"
-
-  # this year
-  YEAR = Time.now.strftime('%Y').to_i
-
-  # name of this version
-  NAME = 'Jacinthe violette'
-
-  # version number
-  VERSION = '3.0.0.dev'
+  # access methods for Jacinthe
+  module Jaccess
+    VERSION = '1.0.0'
+  end
 
   # windows ?
   def self.win?
@@ -46,6 +39,7 @@ end
 J2R = JacintheReports
 
 require_relative 'jaccess/errors.rb'
+require_relative 'jaccess/string_extensions.rb'
 require_relative 'jaccess/file_methods.rb'
 require_relative 'jaccess/files_and_directories.rb'
 require_relative 'jaccess/connect.rb'
