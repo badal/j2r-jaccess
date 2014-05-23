@@ -7,11 +7,11 @@ require 'yard/rake/yardoc_task'
 require 'rake/testtask'
 # require "cucumber/rake/task"
 
-require_relative 'lib/j2r/jaccess.rb'
+require_relative 'lib/j2r/jaccess/version.rb'
 
 spec = Gem::Specification.new do |s|
   s.name = 'j2r-jaccess'
-  s.version = J2R::Jaccess::VERSION
+  s.version = JacintheReports::Jaccess::VERSION
   s.has_rdoc = true
   s.extra_rdoc_files = %w(README.md LICENSE)
   s.summary = 'To be replaced'
@@ -31,7 +31,7 @@ Gem::PackageTask.new(spec) do |p|
 end
 
 YARD::Rake::YardocTask.new do |t|
-  t.options += ['--title', "JacintheReports #{J2R::Jaccess::VERSION} Documentation"]
+  t.options += ['--title', "JacintheReports #{JacintheReports::Jaccess::VERSION} Documentation"]
   t.options += %w(--files LICENSE)
   t.options += %w(--files HISTORY.md)
   t.options += %w(--files TODO.md)

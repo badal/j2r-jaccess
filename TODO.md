@@ -5,3 +5,6 @@
 ## where to put basic things ?
 * file methods
 * without_accents
+
+## data ?
+* should not be part of gem !!!

@@ -14,11 +14,6 @@ require 'logger'
 
 # production de rapports pour Jacinthe
 module JacintheReports
-  # access methods for Jacinthe
-  module Jaccess
-    VERSION = '1.0.0'
-  end
-
   # windows ?
   def self.win?
     RUBY_PLATFORM =~ /mswin|mingw/
@@ -38,6 +33,7 @@ end
 # alternative name of module
 J2R = JacintheReports
 
+require_relative 'jaccess/version.rb'
 require_relative 'jaccess/errors.rb'
 require_relative 'jaccess/string_extensions.rb'
 require_relative 'jaccess/file_methods.rb'

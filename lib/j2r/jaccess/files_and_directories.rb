@@ -8,12 +8,6 @@
 
 # reporting tools for Jacinthe
 module JacintheReports
-  # help directory
-  HELP_DIR = File.expand_path('../../../help', File.dirname(__FILE__))
-
-  # data directory
-  DATA = File.expand_path('../../../data', File.dirname(__FILE__))
-
   # subdirectory for configuration files
   CONFIG_DIR = File.join(DATA, 'config')
   # name of connection configuration file
