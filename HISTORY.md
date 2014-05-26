@@ -1,5 +1,10 @@
-## [v0.1.0]
-* First release (Michel Demazure)
+## [v1.2.0]
+* gemified
+* uses environment constant **J2R-DATA**
 
 ## [v1.1.0]
-* Fully fonctional
+* Fully functional
+* Tests work
+
+## [v0.1.0]
+* First release (Michel Demazure)

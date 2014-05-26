@@ -6,7 +6,6 @@
 #
 # (c) Michel Demazure <michel@demazure.com>
 
-gem 'sequel' # , '<4.0'
 require 'sequel'
 require 'yaml'
 require 'json'

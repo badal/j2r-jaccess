@@ -10,7 +10,7 @@
   j2r-jaccess is a gem to be called by j2r-core. It provides the basic query and update methods.
 
 ## Usage
-  needs to be given a constant **J2R::DATA** giving th path to the parameter directory
+  needs to be given a constant **J2R::DATA** giving the path to the parameter directory
 
 ## More documentation
    See the Yardoc/RDoc documentation.
