@@ -13,6 +13,9 @@ require 'logger'
 
 # production de rapports pour Jacinthe
 module JacintheReports
+  # directory of config files
+  DATA = ENV['J2R_DATA']
+
   # windows ?
   def self.win?
     RUBY_PLATFORM =~ /mswin|mingw/
