@@ -29,24 +29,30 @@ module JacintheReports
         J2R.yaml_dump(J2R::FIELD_FILE, @field_table)
       end
 
-      # open the connection and build the association list
+      # build the corrected join list
       # @param mode [String] connection mode
       # @return [Array] join list
-      # FLOG: 25.1
-      def self.build_join_list(mode) # rubocop:disable MethodLength
-        forbidden_joins, added_joins = Modifications.load_join_modification_data
+      def self.build_join_list(mode)
+        forbidden_joins, added_entries = Modifications.load_join_modification_data
         puts "Forbidden joins : #{forbidden_joins.size}"
-        puts "Added joins : #{added_joins.size}"
+        puts "Added joins : #{added_entries.size}"
+        initial_list = initial_join_list(mode)
+        @join_list = added_entries +
+            initial_list.reject { |_, field, _, _| forbidden_joins.include?(field) }
+      end
+
+      # open the connection and fetch the join list
+      # @param mode [String] connection mode
+      # @return [Array] list of all joins in the database
+      def self.initial_join_list(mode)
+        join_list = []
         base = Jaccess.connect(mode)
-        @join_list = added_joins.dup
         base.tables.each do |table|
           base.foreign_key_list(table).each do |entry|
-            field = entry[:columns].first
-            next if forbidden_joins.include?(field)
-            @join_list << [table, field, entry[:table], entry[:key].first]
+            join_list << [table, entry[:columns].first, entry[:table], entry[:key].first]
           end
         end
-        @join_list
+        join_list
       end
 
       # save the join list in the file JOIN_FILE
