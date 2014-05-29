@@ -9,12 +9,6 @@
 # require 'simplecov'
 # SimpleCov.start
 
-# GUIs for Jacinthe
-module JacintheReports
-  # data directory
-  DATA = ENV['J2R_DATA']
-end
-
 require_relative '../lib/j2r/jaccess.rb'
 require 'minitest/autorun'
 

@@ -10,6 +10,7 @@ require 'sequel'
 require 'yaml'
 require 'json'
 require 'logger'
+require 'unicode'
 
 # production de rapports pour Jacinthe
 module JacintheReports
