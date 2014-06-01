@@ -65,9 +65,8 @@ module JacintheReports
     # @return [String] Sequel type of field, ex "int(11)"
     def self.type_of(field)
       @base.tables.each do |table|
-        if Regexp.new(table.to_s + '_(.*)').match(field.to_s)
-          return @base.schema(table).assoc(field).last[:type]
-        end
+        next unless Regexp.new(table.to_s + '_(.*)').match(field.to_s)
+        return @base.schema(table).assoc(field).last[:type]
       end
     end
 

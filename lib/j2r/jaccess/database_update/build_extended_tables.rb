@@ -39,9 +39,8 @@ module JacintheReports
         composed_joins = Hash.new([])
         previous_joins.each_pair do |(source, target), list|
           new_joins.each_pair do |(other_source, other_target), join|
-            if target == other_source
-              composed_joins[[source, other_target]] += extend_with_item(list, join)
-            end
+            next unless target == other_source
+            composed_joins[[source, other_target]] += extend_with_item(list, join)
           end
         end
         composed_joins

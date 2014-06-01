@@ -7,7 +7,7 @@
 # (c) Michel Demazure <michel@demazure.com>
 
 module JacintheReports
-# patterns for formatting J2R::(Klass) objects
+  # patterns for formatting J2R::(Klass) objects
   module Patterns
     # @param text [Object] object to clean
     # @return [Array<String>] output conforming to AFNOR

@@ -26,8 +26,7 @@ describe Model do
   end
 
   it 'should build the field table' do
-
- #   Model.field_table.size.must_equal(48)
+    Model.field_table.size.must_equal(43)
     list = [12, 8, 6, 8, 20, 3, 3, 3, 2, 12, 3, 7, 20, 3, 2,
             2, 5, 15, 6, 3, 7, 5, 3, 4, 11, 3, 40, 3, 3, 3, 3, 2,
             2, 24, 5, 4, 2, 2, 4, 8, 21, 5, 3]
