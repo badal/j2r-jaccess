@@ -16,6 +16,7 @@ require 'unicode'
 module JacintheReports
   # directory of config files
   DATA = ENV['J2R_DATA']
+  fail "La variable d'environnement J2R_DATA n'existe pas" unless DATA
 
   # windows ?
   def self.win?

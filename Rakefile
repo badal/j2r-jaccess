@@ -20,6 +20,7 @@ spec = Gem::Specification.new do |s|
   s.email = 'michel@demazure.com'
   s.add_dependency('mysql2', '0.3.13')
   s.add_dependency('sequel')
+  s.add_dependency('unicode')
   # s.executables = ['your_executable_here']
   s.files = %w(LICENSE README.md HISTORY.md MANIFEST Rakefile) + Dir.glob('{bin,lib,spec}/**/*')
   s.require_path = 'lib'
