@@ -18,7 +18,11 @@ spec = Gem::Specification.new do |s|
   s.description = 'To be replaced'
   s.author = 'Michel Demazure'
   s.email = 'michel@demazure.com'
-  s.add_dependency('mysql2', '0.3.13')
+  if RUBY_PLATFORM =~ /mswin|mingw/
+    s.add_dependency('mysql2', '0.3.13')
+  else
+    s.add_dependency('mysql2')
+  end
   s.add_dependency('sequel')
   s.add_dependency('unicode')
   # s.executables = ['your_executable_here']
@@ -31,7 +35,7 @@ Gem::PackageTask.new(spec) do |p|
   p.package_dir = ENV['LOCAL_GEMS']
   p.gem_spec = spec
   p.need_tar = false
- # p.need_zip = true
+  # p.need_zip = true
 end
 
 YARD::Rake::YardocTask.new do |t|
@@ -55,7 +59,7 @@ end
 
 desc 'build Manifest'
 task :manifest do
-  system ' mast -x bin -x metrics -x doc -x help -x coverage -x pkg * > MANIFEST'
+  system ' mast lib test LICENSE Rakefile README.md HISTORY.md Gemfile > MANIFEST'
 end
 
 # Cucumber::Rake::Task.new do |task|

@@ -13,8 +13,6 @@ module JacintheReports
   def self.jaccess(mode)
     Jaccess.connect(mode)
     Jaccess::Model.build_models
-  rescue Sequel::Error => err
-    raise J2R::Error::SequelError, err.message, err.backtrace
   end
 
   # access methods for Jacinthe
@@ -33,7 +31,7 @@ module JacintheReports
       @base = Sequel.mysql2(config)
       @base[:tiers].count # to test actual connexion
       @base
-    rescue
+    rescue Sequel::Error
       raise J2R::Error::ConfigureError, "Incorrect connect mode '#{mode}'"
     end
 

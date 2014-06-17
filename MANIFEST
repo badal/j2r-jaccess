@@ -1,7 +1,4 @@
-#!mast -x bin -x metrics -x doc -x help -x coverage -x pkg coverage doc Gemfile Gemfile.lock HISTORY.md lib LICENSE MANIFEST metrics metrics.rake pkg Rakefile README.md test TODO.md
-Gemfile
-Gemfile.lock
-HISTORY.md
+#!mast lib test LICENSE Rakefile README.md HISTORY.md Gemfile
 lib/j2r/jaccess/client_instance_methods.rb
 lib/j2r/jaccess/connect.rb
 lib/j2r/jaccess/database_update/build_extended_tables.rb
@@ -20,11 +17,6 @@ lib/j2r/jaccess/string_extensions.rb
 lib/j2r/jaccess/tiers_instance_methods.rb
 lib/j2r/jaccess/version.rb
 lib/j2r/jaccess.rb
-LICENSE
-MANIFEST
-metrics.rake
-Rakefile
-README.md
 test/client_test.rb
 test/connect_test.rb
 test/coverage/.last_run.json
@@ -34,4 +26,8 @@ test/model_test.rb
 test/spec_helper.rb
 test/string_extensions_test.rb
 test/tiers_test.rb
-TODO.md
+LICENSE
+Rakefile
+README.md
+HISTORY.md
+Gemfile
