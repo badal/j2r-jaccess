@@ -49,7 +49,7 @@ module JacintheReports
     CLIENT = ['Client sage :', :client_sage_id, nil, :client_sage_intitule]
 
     # format for connexion between tiers
-    RAPPORTS = [:rapport_tiers_source, [:rapport_type, :type_rapport_nom] , :rapport_tiers_but,
+    RAPPORTS = [:rapport_tiers_source, [:rapport_type, :type_rapport_nom], :rapport_tiers_but,
                 ':', [:rapport_tiers_but, :tiers_prenom], [:rapport_tiers_but, :tiers_nom],
                 '=', :rapport_commentaire]
   end

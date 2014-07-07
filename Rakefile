@@ -1,41 +1,16 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 
-require 'rubygems/package_task'
 require 'yard'
 require 'yard/rake/yardoc_task'
 require 'rake/testtask'
-# require "cucumber/rake/task"
 
 require_relative 'lib/j2r/jaccess/version.rb'
 
-spec = Gem::Specification.new do |s|
-  s.name = 'j2r-jaccess'
-  s.version = JacintheReports::Jaccess::VERSION
-  s.has_rdoc = true
-  s.extra_rdoc_files = %w(README.md LICENSE)
-  s.summary = 'To be replaced'
-  s.description = 'To be replaced'
-  s.author = 'Michel Demazure'
-  s.email = 'michel@demazure.com'
-  if RUBY_PLATFORM =~ /mswin|mingw/
-    s.add_dependency('mysql2', '0.3.13')
-  else
-    s.add_dependency('mysql2')
-  end
-  s.add_dependency('sequel')
-  s.add_dependency('unicode')
-  # s.executables = ['your_executable_here']
-  s.files = %w(LICENSE README.md HISTORY.md MANIFEST Rakefile) + Dir.glob('{bin,lib,spec}/**/*')
-  s.require_path = 'lib'
-  s.bindir = 'bin'
-end
-
-Gem::PackageTask.new(spec) do |p|
-  p.package_dir = ENV['LOCAL_GEMS']
-  p.gem_spec = spec
-  p.need_tar = false
-  # p.need_zip = true
+desc 'build gem file'
+task :build_gem do
+  system 'gem build j2r-jaccess.gemspec'
+  FileUtils.cp(Dir.glob('*.gem'), ENV['LOCAL_GEMS'])
 end
 
 YARD::Rake::YardocTask.new do |t|
@@ -61,9 +36,5 @@ desc 'build Manifest'
 task :manifest do
   system ' mast lib test LICENSE Rakefile README.md HISTORY.md Gemfile > MANIFEST'
 end
-
-# Cucumber::Rake::Task.new do |task|
-#  task.cucumber_opts = ["features"]
-# end
 
 import('metrics.rake')
