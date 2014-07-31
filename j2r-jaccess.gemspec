@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.version = JacintheReports::Jaccess::VERSION
   s.has_rdoc = true
   s.extra_rdoc_files = %w(README.md LICENSE)
-  s.summary = 'To be replaced'
-  s.description = 'To be replaced'
+  s.summary = 'Access methods for Jacinthe'
+  s.description = 'Base gem for Jacinthe, to be used by j2r-core and j2r-qt'
   s.author = 'Michel Demazure'
   s.email = 'michel@demazure.com'
   if RUBY_PLATFORM =~ /mswin|mingw/

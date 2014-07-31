@@ -30,7 +30,11 @@ end
 
 describe 'Metaprogrammation' do
 
-  let(:tiers) { J2R::Tiers[100] }
+  let(:tiers) do
+    Jaccess.connect('test')
+    Model.build_models
+    J2R::Tiers[100]
+  end
 
   describe 'extended fields' do
     it('') { tiers.public_methods.include?(:compte_collectif_nom).must_equal(false) }
