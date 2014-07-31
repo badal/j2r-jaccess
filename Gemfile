@@ -1,10 +1,5 @@
+# encoding: utf-8
 source 'http://rubygems.org'
-
-group :exploitation do
-  gem 'mysql2', '0.3.13'
-  gem 'sequel'
-  gem 'unicode'
-end
 
 group :development do
   gem 'rake'
@@ -14,3 +9,5 @@ group :development do
   gem 'simplecov'
   gem 'simplecov-html'
 end
+
+gemspec
