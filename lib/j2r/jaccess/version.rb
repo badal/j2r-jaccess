@@ -10,7 +10,10 @@
 module JacintheReports
   # access methods for Jacinthe
   module Jaccess
+<<<<<<< HEAD
     # version du gem
+=======
+>>>>>>> 470f2a55eae215d3cd5b528699971a75dce6fc1f
     VERSION = '1.2.1'
   end
 end
