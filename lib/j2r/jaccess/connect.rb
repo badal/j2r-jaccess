@@ -13,6 +13,7 @@ module JacintheReports
   def self.jaccess(mode)
     Jaccess.connect(mode)
     Jaccess::Model.build_models
+    true
   end
 
   # access methods for Jacinthe

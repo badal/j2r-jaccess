@@ -45,7 +45,7 @@ describe 'Metaprogrammation' do
   describe 'extended_join' do
     it('') do
       J2R::Tiers.extended_join(:compte_collectif).first.tiers_nom
-      .must_equal('Universite Rennes I')
+        .must_equal('Universite Rennes I')
     end
   end
 
