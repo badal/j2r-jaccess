@@ -14,11 +14,7 @@ Gem::Specification.new do |s|
   s.description = 'Base gem for Jacinthe, to be used by j2r-core and j2r-qt'
   s.author = 'Michel Demazure'
   s.email = 'michel@demazure.com'
-  if RUBY_PLATFORM =~ /mswin|mingw/
-    s.add_dependency('mysql2', '0.3.13')
-  else
-    s.add_dependency('mysql2')
-  end
+  s.add_dependency('mysql2')
   s.add_dependency('sequel')
   s.add_dependency('unicode')
   s.files = %w(LICENSE README.md HISTORY.md MANIFEST Rakefile) + Dir.glob('{bin,lib,test}/**/*')

@@ -10,4 +10,5 @@ group :development do
   gem 'simplecov-html'
 end
 
+gem 'json' '=1.8.1'
 gemspec

@@ -10,7 +10,8 @@ require_relative 'lib/j2r/jaccess/version.rb'
 desc 'build gem file'
 task :build_gem do
   system 'gem build j2r-jaccess.gemspec'
-  FileUtils.cp(Dir.glob('*.gem'), ENV['LOCAL_GEMS'])
+  dest = File.join(ENV['LOCAL_GEMS'], RUBY_VERSION)
+  FileUtils.mv(Dir.glob('*.gem'), dest)
 end
 
 YARD::Rake::YardocTask.new do |t|
