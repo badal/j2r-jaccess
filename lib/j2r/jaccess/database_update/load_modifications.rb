@@ -35,9 +35,9 @@ module JacintheReports
       # @param [Symbol or String] field database field
       # @return [Symbol] table of this field
       def self.table_of(field)
-        Jaccess.base.tables.select do |table|
+        Jaccess.base.tables.find do |table|
           /^#{table}/ =~ field.to_s
-        end.first
+        end
       end
     end
   end

@@ -49,8 +49,6 @@ module JacintheReports
             send(key)
           when Array
             follow_array_case(key)
-          else
-            nil
           end
         end
 

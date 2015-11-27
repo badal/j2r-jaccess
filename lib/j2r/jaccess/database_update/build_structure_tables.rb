@@ -38,7 +38,7 @@ module JacintheReports
         puts "Added joins : #{added_entries.size}"
         initial_list = initial_join_list(mode)
         @join_list = added_entries +
-            initial_list.reject { |_, field, _, _| forbidden_joins.include?(field) }
+                     initial_list.reject { |_, field, _, _| forbidden_joins.include?(field) }
       end
 
       # open the connection and fetch the join list

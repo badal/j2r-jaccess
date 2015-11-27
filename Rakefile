@@ -10,7 +10,7 @@ require_relative 'lib/j2r/jaccess/version.rb'
 desc 'build gem file'
 task :build_gem do
   system 'gem build j2r-jaccess.gemspec'
-  dest = File.join(ENV['LOCAL_GEMS'], RUBY_VERSION)
+  dest = File.join(ENV['LOCAL_GEMS'])
   FileUtils.mv(Dir.glob('*.gem'), dest)
 end
 

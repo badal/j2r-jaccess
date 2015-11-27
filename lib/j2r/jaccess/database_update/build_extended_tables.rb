@@ -77,7 +77,6 @@ module JacintheReports
       end
 
       # @return [Hash] all table joins except loops and "rapport" joins
-      # @param table [Hash] joining table
       def self.initial_joins
         initial_joins = {}
         Jaccess::Model.joining_table.each_pair do |(source, field), (target, _)|
@@ -134,7 +133,7 @@ module JacintheReports
       # @param list [Array] array of pairs
       # @return [Array] array interlacing the given one
       def self.twisted(list)
-        Array.new.tap do |twisted|
+        [].tap do |twisted|
           old_field = list.shift.last
           list.each do |table, field|
             twisted << table << old_field

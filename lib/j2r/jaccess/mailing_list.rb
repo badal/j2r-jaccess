@@ -62,7 +62,7 @@ module JacintheReports
       # @return [Table] (id, name) table
       def show_table
         columns = %w(Numéro Nom)
-        lines  = @mailing.map do |item|
+        lines = @mailing.map do |item|
           %W(#{item[:vue_adresse_tiers]} #{item[:vue_adresse_nom]})
         end
         # noinspection RubyArgCount
