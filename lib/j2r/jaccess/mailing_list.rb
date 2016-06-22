@@ -11,8 +11,7 @@ module JacintheReports
     # address methods for mailings
     class MailingList
       # pattern for routing file
-      ROUTER = [:vue_adresse_tiers, nil,
-                :vue_adresse_nom, nil,
+      COMMON = [:vue_adresse_nom, nil,
                 :vue_adresse_ligne1, nil,
                 :vue_adresse_ligne2, nil,
                 :vue_adresse_ligne3, nil,
@@ -21,10 +20,13 @@ module JacintheReports
                 :vue_adresse_ville, nil,
                 :vue_adresse_province, nil,
                 :vue_adresse_pays]
-      # pattern for email routing file
-      EMAIL = [:vue_adresse_tiers, nil,
-               :vue_adresse_nom, nil,
-               :vue_adresse_email]
+
+      ROUTER = [:vue_adresse_tiers, nil] + COMMON
+
+      SEARCHABLE = [:civilite_nom, nil,
+                    :tiers_prenom, nil,
+                    :tiers_nom, nil] + COMMON
+
       # pattern for list of tiers w/o email
       LIST = [:vue_adresse_tiers, ' ', :vue_adresse_nom]
 
@@ -73,6 +75,13 @@ module JacintheReports
       def postal_adresses
         @mailing.map do |adrs|
           adrs.routing(ROUTER)
+        end
+      end
+
+      # @return [Array<String>] content of csv file (SEARCHABLE)
+      def searchable_adresses
+        @mailing.map do |adrs|
+          adrs.routing(SEARCHABLE)
         end
       end
 

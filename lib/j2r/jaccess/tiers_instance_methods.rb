@@ -26,6 +26,11 @@ module JacintheReports
           end.flatten.sort.join(', ')
         end
 
+        # @return [String] reports on infos complements
+        def infos_complementaires
+          J2R::VueTiersInfos.filter(vue_tiers_infos_tiers: id).first.vue_tiers_infos_complementaires
+        end
+
         # @param [Integer] usage id in table usage_adresse
         # @return [J2R::VueAdresse] vue_adresse record
         def address(usage = 1)
