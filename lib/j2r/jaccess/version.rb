@@ -10,6 +10,6 @@
 module JacintheReports
   # access methods for Jacinthe
   module Jaccess
-    VERSION = '1.2.5'
+    VERSION = '1.2.6'
   end
 end

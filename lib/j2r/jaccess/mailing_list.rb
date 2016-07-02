@@ -20,12 +20,18 @@ module JacintheReports
                 :vue_adresse_ville, nil,
                 :vue_adresse_province, nil,
                 :vue_adresse_pays]
-
+      # for router
       ROUTER = [:vue_adresse_tiers, nil] + COMMON
 
+      # same but with analysed name for searching
       SEARCHABLE = [:civilite_nom, nil,
                     :tiers_prenom, nil,
                     :tiers_nom, nil] + COMMON
+
+      # pattern for email routing file
+      EMAIL = [:vue_adresse_tiers, nil,
+               :vue_adresse_nom, nil,
+               :vue_adresse_email]
 
       # pattern for list of tiers w/o email
       LIST = [:vue_adresse_tiers, ' ', :vue_adresse_nom]
