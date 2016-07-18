@@ -67,14 +67,13 @@ module JacintheReports
         @mailing.size
       end
 
-      # @return [Table] (id, name) table
-      def show_table
+      # @return [Array * 2] columns (id, name) and lines to build a Report::Table in mailing_frame
+      def table_to_show
         columns = %w(Numéro Nom)
         lines = @mailing.map do |item|
           %W(#{item[:vue_adresse_tiers]} #{item[:vue_adresse_nom]})
         end
-        # noinspection RubyArgCount
-        Reports::Table.new(columns, lines)
+        [columns, lines]
       end
 
       # @return [Array<String>] content of csv file (ROUTER)

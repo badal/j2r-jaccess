@@ -1,3 +1,6 @@
+## [v1.2.7]
+* moved away from mailing_list method using Reports::Table, used in mailing_frame
+
 ## [v1.2.5]
 * added 'infos complementaires' to Tiers instance methods
 
