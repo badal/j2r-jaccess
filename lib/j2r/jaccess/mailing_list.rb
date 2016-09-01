@@ -24,7 +24,8 @@ module JacintheReports
       ROUTER = [:vue_adresse_tiers, nil] + COMMON
 
       # same but with analysed name for searching
-      SEARCHABLE = [:civilite_nom, nil,
+      SEARCHABLE = [:tiers_id, nil,
+                    :civilite_nom, nil,
                     :tiers_prenom, nil,
                     :tiers_nom, nil] + COMMON
 
